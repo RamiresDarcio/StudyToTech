@@ -228,11 +228,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\estuda\\StudyToTech\\StudyToTech\\StudyToTech.csproj",
+      "projectUniqueName": "C:\\Users\\ramir\\OneDrive\\Documentos\\GitHub\\StudyToTech\\StudyToTech\\StudyToTech\\StudyToTech.csproj",
       "projectName": "StudyToTech",
-      "projectPath": "C:\\estuda\\StudyToTech\\StudyToTech\\StudyToTech.csproj",
+      "projectPath": "C:\\Users\\ramir\\OneDrive\\Documentos\\GitHub\\StudyToTech\\StudyToTech\\StudyToTech\\StudyToTech.csproj",
       "packagesPath": "C:\\Users\\ramir\\.nuget\\packages\\",
-      "outputPath": "C:\\estuda\\StudyToTech\\StudyToTech\\obj\\",
+      "outputPath": "C:\\Users\\ramir\\OneDrive\\Documentos\\GitHub\\StudyToTech\\StudyToTech\\StudyToTech\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
