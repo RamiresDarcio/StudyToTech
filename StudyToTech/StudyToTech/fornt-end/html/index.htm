@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyToTech - Painel de Estudos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/StudyToTech/StudyToTech/fornt-end/html/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar" id="sidebar">
+            <div class="logo">
+                <h2>StudyToTech</h2>
+            </div>
+            <ul>
+                <li class="active"><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-book"></i> Disciplinas</a></li>
+                <li><a href="#"><i class="fas fa-tasks"></i> Tarefas</a></li>
+                <li><a href="#"><i class="fas fa-calendar-alt"></i> Calendário</a></li>
+                <li><a href="#"><i class="fas fa-chart-line"></i> Desempenho</a></li>
+            </ul>
+            <div class="premium-badge">
+                <p>Plano Premium Ativo</p>
+            </div>
+        </nav>
+
+        <main class="content">
+            <header>
+                <button id="menu-toggle" class="mobile-only"><i class="fas fa-bars"></i></button>
+                <h1>Bem-vinda, Julia!</h1>
+                <div class="user-profile">
+                    <span>ADS - 2º Semestre</span>
+                    <img src="https://via.placeholder.com/40" alt="Perfil" class="avatar">
+                </div>
+            </header>
+
+            <section class="dashboard-grid">
+                <div class="card pomodoro-card">
+                    <h3><i class="fas fa-stopwatch"></i> Timer Pomodoro</h3>
+                    <div class="timer-display" id="timer">25:00</div>
+                    <div class="timer-controls">
+                        <button onclick="startTimer()" class="btn-start">Iniciar</button>
+                        <button onclick="pauseTimer()" class="btn-pause">Pausar</button>
+                        <button onclick="resetTimer()" class="btn-reset">Resetar</button>
+                    </div>
+                </div>
+
+                <div class="card progress-card">
+                    <h3>Progresso Semanal</h3>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 65%;">65%</div>
+                    </div>
+                    <p>Você completou 12 de 18 tarefas!</p>
+                </div>
+
+                <div class="card tasks-card">
+                    <h3>Próximas Tarefas</h3>
+                    <ul class="task-list">
+                        <li>
+                            <input type="checkbox">
+                            <span>Projeto PIM - Engenharia de Software</span>
+                            <span class="tag tech">ADS</span>
+                        </li>
+                        <li>
+                            <input type="checkbox">
+                            <span>Revisão Direito Bancário</span>
+                            <span class="tag concurso">BB</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card ai-card">
+                    <h3><i class="fas fa-robot"></i> Sugestão da IA</h3>
+                    <p>"Julia, seu desempenho em <strong>Algoritmos</strong> aumenta após as 14h. Que tal focar nisso hoje?"</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="/StudyToTech/StudyToTech/fornt-end/html/css/js/scripts.js"></script>
+</body>
+</html>
