@@ -1,0 +1,75 @@
+@using StudyToTechWeb.Models
+@model List<Disciplina>
+
+@{
+    ViewData["Title"] = "Disciplinas";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disciplinas</title>
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Disciplinas</h1>
+            <a href="@Url.Action("Index", "Home")" class="back-link">← Voltar</a>
+        </header>
+
+        <div class="actions">
+            <a href="@Url.Action("Criar")" class="btn-primary">+ Nova Disciplina</a>
+        </div>
+
+        <div class="disciplinas-list">
+            @if (Model != null && Model.Count > 0)
+            {
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Descrição</th>
+                            <th>Carga Horária</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var disciplina in Model)
+                        {
+                            <tr>
+                                <td>@disciplina.Nome</td>
+                                <td>@disciplina.Descricao</td>
+                                <td>@disciplina.CargaHoraria h</td>
+                                <td>
+                                    <a href="@Url.Action("Editar", new { id = disciplina.Id })" class="btn-sm btn-info">Editar</a>
+                                    <a href="@Url.Action("Deletar", new { id = disciplina.Id })" class="btn-sm btn-danger" onclick="return confirm('Tem certeza?')">Deletar</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p>Nenhuma disciplina cadastrada.</p>
+            }
+        </div>
+    </div>
+
+    <style>
+        .disciplinas-list { margin-top: 20px; }
+        .table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .table th, .table td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+        .table th { background-color: #007bff; color: white; }
+        .actions { margin: 20px 0; }
+        .btn-primary, .btn-sm { padding: 8px 15px; margin-right: 5px; text-decoration: none; border-radius: 4px; cursor: pointer; }
+        .btn-primary { background-color: #28a745; color: white; }
+        .btn-info { background-color: #17a2b8; color: white; }
+        .btn-danger { background-color: #dc3545; color: white; }
+        .back-link { margin-left: 20px; cursor: pointer; }
+    </style>
+</body>
+</html>

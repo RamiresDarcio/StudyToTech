@@ -1,0 +1,97 @@
+﻿@{
+    ViewData["Title"] = "StudyToTech - Dashboard";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyToTech - Dashboard</title>
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>StudyToTech</h1>
+            <p>Bem-vindo ao seu Dashboard de Estudos</p>
+            <a href="@Url.Action("Logout", "Login")" class="logout-btn">Sair</a>
+        </header>
+
+        <nav class="main-menu">
+            <ul>
+                <li><a href="@Url.Action("Index", "Disciplina")">📚 Disciplinas</a></li>
+                <li><a href="@Url.Action("Index", "Tarefa")">✓ Tarefas</a></li>
+                <li><a href="@Url.Action("Index", "Meta")">🎯 Metas</a></li>
+                <li><a href="@Url.Action("Index", "Historico")">📋 Histórico</a></li>
+                <li><a href="@Url.Action("Index", "Calendario")">📅 Calendário</a></li>
+                <li><a href="@Url.Action("Index", "Analise")">📊 Análise</a></li>
+                <li><a href="@Url.Action("Index", "Perfil")">👤 Perfil</a></li>
+            </ul>
+        </nav>
+
+        <main class="dashboard">
+            <section class="section">
+                <h2>Bem-vindo ao StudyToTech! 🎓</h2>
+                <p>Sistema inteligente de gerenciamento de estudos</p>
+            </section>
+
+            <section class="section quick-links">
+                <h3>Acesso Rápido</h3>
+                <div class="links-grid">
+                    <a href="@Url.Action("Index", "Disciplina")" class="quick-link">
+                        <span class="icon">📚</span>
+                        <span>Disciplinas</span>
+                    </a>
+                    <a href="@Url.Action("Index", "Tarefa")" class="quick-link">
+                        <span class="icon">✓</span>
+                        <span>Tarefas</span>
+                    </a>
+                    <a href="@Url.Action("Index", "Meta")" class="quick-link">
+                        <span class="icon">🎯</span>
+                        <span>Metas</span>
+                    </a>
+                    <a href="@Url.Action("Index", "Calendario")" class="quick-link">
+                        <span class="icon">📅</span>
+                        <span>Calendário</span>
+                    </a>
+                    <a href="@Url.Action("Index", "Historico")" class="quick-link">
+                        <span class="icon">📋</span>
+                        <span>Histórico</span>
+                    </a>
+                    <a href="@Url.Action("Index", "Analise")" class="quick-link">
+                        <span class="icon">📊</span>
+                        <span>Análise</span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="section">
+                <h3>Recursos Disponíveis</h3>
+                <ul style="font-size: 16px; line-height: 1.8;">
+                    <li>✅ Gerenciar disciplinas e suas informações</li>
+                    <li>✅ Organizar tarefas por prioridade e prazo</li>
+                    <li>✅ Definir e acompanhar metas de estudo</li>
+                    <li>✅ Registrar atividades no histórico</li>
+                    <li>✅ Planejar eventos no calendário</li>
+                    <li>✅ Analisar seu desempenho</li>
+                    <li>✅ Gerenciar seu perfil acadêmico</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="~/js/scripts.js"></script>
+
+    <style>
+        .quick-links { margin-top: 30px; }
+        .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; margin-top: 15px; }
+        .quick-link { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 8px; cursor: pointer; transition: transform 0.2s; }
+        .quick-link:hover { transform: translateY(-5px); }
+        .quick-link .icon { font-size: 2em; margin-bottom: 8px; }
+        .quick-link span { font-weight: bold; text-align: center; }
+        header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+        .logout-btn { background-color: #dc3545; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; cursor: pointer; }
+    </style>
+</body>
+</html>

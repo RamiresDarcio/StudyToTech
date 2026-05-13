@@ -1,0 +1,74 @@
+@using StudyToTechWeb.Models
+@model Dictionary<string, object>
+
+@{
+    ViewData["Title"] = "Dashboard Estudos";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dashboard de Estudos</h1>
+        </header>
+
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <h3>Tarefas Pendentes</h3>
+                <p class="stat-number">@Model?["TarefasPendentes"]</p>
+            </div>
+            <div class="stat-card">
+                <h3>Disciplinas</h3>
+                <p class="stat-number">@Model?["Disciplinas"]</p>
+            </div>
+            <div class="stat-card">
+                <h3>Atividades Registradas</h3>
+                <p class="stat-number">@Model?["Atividades"]</p>
+            </div>
+        </div>
+
+        <div class="dashboard-actions">
+            <h2>Ações Rápidas</h2>
+            <a href="@Url.Action("Index", "Disciplina")" class="action-link">📚 Disciplinas</a>
+            <a href="@Url.Action("Index", "Tarefa")" class="action-link">✓ Tarefas</a>
+            <a href="@Url.Action("Index", "Meta")" class="action-link">🎯 Metas</a>
+            <a href="@Url.Action("Index", "Historico")" class="action-link">📋 Histórico</a>
+            <a href="@Url.Action("Index", "Perfil")" class="action-link">👤 Perfil</a>
+        </div>
+
+        <form method="post" class="form-container" style="margin: 30px auto;">
+            <h3>Registrar Atividade de Estudo</h3>
+            <div class="form-group">
+                <label>Descrição</label>
+                <textarea name="descricao" placeholder="O que você estudou?" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label>Tempo de Estudo (minutos)</label>
+                <input type="number" name="tempoEstudo" placeholder="45" required>
+            </div>
+            <button type="submit" class="btn-primary">Registrar</button>
+        </form>
+    </div>
+
+    <style>
+        .dashboard-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { border: 1px solid #ddd; border-radius: 8px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; }
+        .stat-number { font-size: 2.5em; font-weight: bold; margin: 10px 0; }
+        .dashboard-actions { margin: 30px 0; }
+        .action-link { display: inline-block; padding: 15px 20px; margin: 5px; background-color: #007bff; color: white; text-decoration: none; border-radius: 4px; cursor: pointer; }
+        .action-link:hover { background-color: #0056b3; }
+        .form-container { max-width: 600px; border: 1px solid #ddd; padding: 15px; border-radius: 8px; background-color: #f9f9f9; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+        .btn-primary { padding: 10px 20px; background-color: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    </style>
+</body>
+</html>

@@ -1,0 +1,41 @@
+@using StudyToTechWeb.Models
+@model PerfilUsuario
+
+@{
+    ViewData["Title"] = "Perfil";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Seu Perfil</h1>
+            <a href="@Url.Action("Index", "Home")" class="back-link">← Voltar</a>
+        </header>
+
+        <div class="profile-card">
+            <h2>@Model?.Nome</h2>
+            <p><strong>Email:</strong> @Model?.Email</p>
+            <p><strong>Curso:</strong> @Model?.Curso</p>
+            <p><strong>Semestre:</strong> @Model?.Semestre</p>
+            
+            <a href="@Url.Action("Editar")" class="btn-primary">Editar Perfil</a>
+        </div>
+    </div>
+
+    <style>
+        .profile-card { max-width: 600px; margin: 30px auto; border: 1px solid #ddd; padding: 20px; border-radius: 8px; background-color: #f9f9f9; }
+        .profile-card h2 { margin-top: 0; }
+        .profile-card p { margin: 10px 0; }
+        .btn-primary { padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 4px; cursor: pointer; display: inline-block; }
+        .back-link { margin-left: 20px; cursor: pointer; }
+    </style>
+</body>
+</html>

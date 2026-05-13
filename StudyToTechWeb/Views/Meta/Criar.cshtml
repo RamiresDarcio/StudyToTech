@@ -1,0 +1,65 @@
+@{
+    ViewData["Title"] = "Criar Meta";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Meta</title>
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Criar Meta de Estudo</h1>
+        </header>
+
+        <form method="post" class="form-container">
+            @if (!string.IsNullOrEmpty(ViewBag.Erro))
+            {
+                <div style="color: red; margin-bottom: 10px;">
+                    <strong>Erro:</strong> @ViewBag.Erro
+                </div>
+            }
+
+            <div class="form-group">
+                <label>Título</label>
+                <input type="text" name="titulo" placeholder="Ex: Estudar Cálculo" required>
+            </div>
+
+            <div class="form-group">
+                <label>Descrição</label>
+                <textarea name="descricao" placeholder="Descrição da meta" rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Horas Alvo</label>
+                <input type="number" name="horasAlvo" placeholder="Ex: 40" required>
+            </div>
+
+            <div class="form-group">
+                <label>Data Limite</label>
+                <input type="date" name="dataLimite" required>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">Salvar</button>
+                <a href="@Url.Action("Index")" class="btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+
+    <style>
+        .form-container { max-width: 600px; margin: 30px auto; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-family: Arial; box-sizing: border-box; }
+        .form-actions { margin-top: 30px; }
+        .btn-primary, .btn-secondary { padding: 10px 20px; margin-right: 10px; text-decoration: none; border-radius: 4px; cursor: pointer; border: none; font-size: 14px; }
+        .btn-primary { background-color: #28a745; color: white; }
+        .btn-secondary { background-color: #6c757d; color: white; }
+    </style>
+</body>
+</html>
