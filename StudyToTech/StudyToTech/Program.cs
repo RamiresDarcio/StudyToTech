@@ -25,8 +25,6 @@ namespace StudyToTech
             {
                 Console.WriteLine("\n=== Sistema de Gerenciamento de Estudos ===");
                 Console.WriteLine($"Usuário: {login.UsuarioLogado.Nome}");
-                Console.WriteLine("1. Cadastrar Usuário");
-                Console.WriteLine("2. Criar Perfil");
                 Console.WriteLine("3. Cadastrar Disciplina");
                 Console.WriteLine("4. Listar Disciplinas");
                 Console.WriteLine("5. Cadastrar Tarefa");
